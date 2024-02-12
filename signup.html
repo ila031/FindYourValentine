@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="icon" type="image/png" href="heart.png"> 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7eaf9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 2px #ccc;
+            max-width: 400px;
+            margin: 20px auto;
+        }
+        h2 {
+            color: #f06292;
+            text-align: center;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #f06292;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #d81b60;
+        }
+        .warning {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Sign Up</h2>
+        <form action="signup2.html" method="POST">
+            <label for="first-name">First Name:</label>
+            <input type="text" name="first-name" id="first-name" required><br>
+            <label for="last-name">Last Name:</label>
+            <input type="text" name="last-name" id="last-name" required><br>
+            <label for="age">Age:</label>
+            <input type="number" name="age" id="age" required><br>
+            <label for="city">City (optional):</label>
+            <input type="text" name="city" id="city"><br>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required><br>
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" required><br>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required><br>
+            <input type="submit" value="Continue">
+        </form>
+        <div class="warning" id="age-warning" style="display: none;">You must be at least 18 years old to proceed.</div>
+    </div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            var age = document.getElementById('age').value;
+            if (age < 18) {
+                document.getElementById('age-warning').style.display = 'block';
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
