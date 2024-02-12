@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal Texting</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f7eaf9; 
+            margin: 0;
+            padding: 20px;
+            position: relative; 
+        }
+        #terminal {
+            width: 80%;
+            height: 400px;
+            overflow-y: scroll;
+            border: 1px solid white;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 2px #ccc;
+        }
+        #input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: transparent;
+            color: black;
+            border-top: 1px solid black;
+            outline: none;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #555;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background-color: #888;
+        }
+        .back-button {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #f06292;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: #d81b60;
+        }
+    </style>
+</head>
+<body>
+
+<div id="terminal">
+    <div>Welcome to Texting Your Valentine!</div>
+</div>
+
+<input type="text" id="input" placeholder="Type your message here...">
+
+<button class="back-button" onclick="goBack()">Go back to home page</button>
+
+<script>
+    const terminal = document.getElementById('terminal');
+    const input = document.getElementById('input');
+
+    input.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            const message = input.value.trim();
+            if (message) {
+                appendMessage('You', message);
+                input.value = '';
+            }
+        }
+    });
+
+    function appendMessage(sender, message) {
+        const messageElement = document.createElement('div');
+        messageElement.textContent = sender + ': ' + message;
+        terminal.appendChild(messageElement);
+        terminal.scrollTop = terminal.scrollHeight;
+    }
+
+    function goBack() {
+        window.location.href = 'home.html'; 
+    }
+</script>
+
+</body>
+</html>
