@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="icon" type="image/png" href="heart.png"> 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7eaf9;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            position: relative; 
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .b {
+            text-align: center;
+        }
+        .welcome {
+            background-color: #f06292; /* Background color for the welcome section */
+            padding: 20px; 
+            text-align: center;
+            margin-bottom: 20px; 
+        }
+        .welcome h1 {
+            color: #fff; 
+            font-size: 36px;
+            margin-bottom: 5px; 
+            text-decoration: underline;
+        }
+        .welcome h2, .welcome p {
+            color: #fff; 
+            margin-bottom: 10px; 
+        }
+        .dropdown {
+            position: absolute;
+            top: 20px; 
+            right: 80px; 
+            display: inline-block;
+            cursor: pointer;
+            z-index: 3;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .matches-found {
+            position: absolute;
+            left: 20px;
+            top: 80px; 
+            font-size: 14px;
+            color: #666;
+        }
+        .heart-icon {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 50px; 
+            height: auto;
+            animation: heartbeat 1s infinite; /* Heartbeat animation */
+            transform-origin: center; /* Set transform origin to center */
+            z-index: 2; /* Ensure heart icon appears above other elements */
+        }
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1); 
+            }
+            50% {
+                transform: scale(1.2); 
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        .hearts-container {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .heart {
+            font-size: 24px;
+            margin: 0 5px;
+        }
+        /* Heart styling */
+        .heart {
+            color: #f06292;
+        }
+        /* Photo styling */
+        .match-photo {
+            display: none; /* Initially hidden */
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-top: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        .match-found .match-photo {
+            display: block; /* Display when match is found */
+        }
+    </style>
+</head>
+<body>
+
+<div class="welcome">
+    <h1>Welcome</h1>
+    <h2>Find Someone to be Your Valentine in the Matter of Minutes.</h2>
+    <p>Never Have to Spend Another Valentine's Day Alone!</p>
+</div>
+<div class="b">
+    <p>Matches Found: 1</p>
+    <img src="photo.png" alt="Photo" width="50" height="50">
+    
+    <p><a href="match.html"> Click here to say HI!</a></p>
+</div>
+
+<div class="dropdown">
+    <img src="photo_icon.png" alt="Photo" width="30" height="30">
+    <div class="dropdown-content">
+        <a href="cprof.html">Change Profile</a>
+        <a href="signout.html">Sign Out</a>
+    </div>
+</div>
+
+<!-- Heart icon -->
+<img class="heart-icon" src="heart.png" alt="Heart">
+
+</body>
+</html>
