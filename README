@@ -1,0 +1,24 @@
+This website allows individuals to find a valentine (a person to spend the day with) in the matter of minutes.
+You answer a questionare when you sign up and it matches that with other users who line up pwith your choices
+The gives you choices that you can explore and who you want to engae with.
+From that you can reach out throuugh the website to take to that individual to feel it out.
+
+
+How I would continue with this project:
+Is creating that storage and data base were users can actually connect with other users with safety and security.
+Creating and finishing that message portal thats very limited so that users can use the website to converse and 
+feel each other out before moving on.
+Add in more functions(that creates better user expirence.)
+
+HTML AND CSS was used.
+
+NOTES: Photo on home page in the middle will represent the matches profile
+The photo on the right will be off the users.
+
+Functions;
+Main html -> Log in page
+sign up and sign up2 -> collect info and have the questionare
+home -> is the home page (that in the future will need to be revamped)
+match -> have the texting terminal for you to text the match that has been found to be your valentine
+cprof -> is where you can change your profile
+signout -> signs you out of your profile page.
