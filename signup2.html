@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire</title>
+    <link rel="icon" type="image/png" href="heart.png"> 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7eaf9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 2px #ccc;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        h2 {
+            color: #f06292;
+            text-align: center;
+        }
+        p {
+            text-align: center;
+        }
+        .question {
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .btn-container button {
+            padding: 10px 20px;
+            background-color: #f06292;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn-container button:hover {
+            background-color: #d81b60;
+        }
+        .dropdown-menu {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome!</h2>
+        <p>Please select everything that applies to you:</p>
+        <div class="question">
+            <label for="long-term">
+                <input type="checkbox" id="long-term" name="long-term"> I am looking for something long term.
+            </label>
+            <label for="short-term">
+                <input type="checkbox" id="short-term" name="short-term"> I am looking for something short term.
+            </label>
+            <label for="new-experience">
+                <input type="checkbox" id="new-experience" name="new-experience"> I love pets.
+            </label>
+            <label for="meet-location">
+                <input type="checkbox" id="meet-location" name="meet-location"> I love sports.
+            </label>
+            <label for="online-only">
+                <input type="checkbox" id="online-only" name="online-only"> I want to talk to them online only.
+            </label>
+            <label for="outgoing">
+                <input type="checkbox" id="outgoing" name="outgoing"> I am an outgoing person.
+            </label>
+            <label for="like-going-out">
+                <input type="checkbox" id="like-going-out" name="like-going-out"> I am a person who likes going out.
+            </label>
+            <label for="like-staying-in">
+                <input type="checkbox" id="like-staying-in" name="like-staying-in"> I am a person who likes staying in.
+            </label>
+            <label for="music-genre">Choose your favorite music genre:</label>
+            <select id="music-genre" class="dropdown-menu">
+                <option value="pop">Pop</option>
+                <option value="rock">Rock</option>
+                <option value="hip-hop">Hip Hop</option>
+                <option value="jazz">Jazz</option>
+                <option value="R&B">R&B</option>
+                <option value="classical">Classical</option>
+                <option value="country">Country</option>
+                <!-- Options can be added ... as needed -->
+            </select>
+        </div>
+        <div class="btn-container">
+            <button onclick="location.href='home.html'">Go to Home</button>
+        </div>
+    </div>
+</body>
+</html>
