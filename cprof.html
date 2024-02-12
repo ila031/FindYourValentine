@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7eaf9; 
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center; 
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+        }
+        input[type="text"], input[type="number"], textarea {
+            width: calc(100% - 22px); 
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+            display: inline-block;
+        }
+        .save-button, .back-button {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            text-align: center; 
+            transition: background-color 0.3s, color 0.3s; 
+            text-decoration: none; 
+            font-size: 16px;
+            font-weight: bold; 
+        }
+        .save-button {
+            background-color: #f06292; 
+            color: #fff; 
+        }
+        .back-button {
+            background-color: #f06292; 
+            color: #fff; 
+        }
+        .save-button:hover, .back-button:hover {
+            background-color: #d81b60; 
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Change Profile</h1>
+    <form id="profileForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required><br>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required><br>
+
+        <label for="preferences">Preferences:</label>
+        <textarea id="preferences" name="preferences" rows="4" required></textarea><br>
+
+        <input type="submit" value="Save Changes" class="save-button">
+        <p></p>
+        <a href="home.html" class="back-button"> Home </a> 
+    </form>
+</div>
+
+<script>
+    // Retrieve user information from Local Storage if available
+    const savedUser = JSON.parse(localStorage.getItem('user'));
+    if (savedUser) {
+        document.getElementById('username').value = savedUser.username || '';
+        document.getElementById('name').value = savedUser.name || '';
+        document.getElementById('age').value = savedUser.age || '';
+        document.getElementById('city').value = savedUser.city || '';
+        document.getElementById('preferences').value = savedUser.preferences || '';
+    }
+
+    // Save user information to Local Storage when form is submitted
+    document.getElementById('profileForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const formData = {
+            username: document.getElementById('username').value,
+            name: document.getElementById('name').value,
+            age: document.getElementById('age').value,
+            city: document.getElementById('city').value,
+            preferences: document.getElementById('preferences').value
+        };
+        localStorage.setItem('user', JSON.stringify(formData));
+        alert('Changes saved successfully!');
+    });
+</script>
+
+</body>
+</html>
